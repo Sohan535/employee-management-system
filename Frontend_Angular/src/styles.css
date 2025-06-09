@@ -19,7 +19,7 @@ body {
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0s, color 0s;
 }
 
 /* Headings */
