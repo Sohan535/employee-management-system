@@ -3,3 +3,31 @@
     margin-bottom: 16px;
     margin-left: -1px;
 }
+
+.details-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.details-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #00aaff;
+}
+
+.details-container p {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.details-container label {
+  font-weight: bold;
+  color: #ffffff;
+}

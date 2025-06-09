@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Directive, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
@@ -12,8 +12,8 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getEmployeesList(): Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(`${this.baseURL}`);
+  getEmployeesList(sortBy: string, direction: string): Observable<Employee[]>{
+    return this.httpClient.get<Employee[]>(`${this.baseURL}?sortBy=${sortBy}&direction=${direction}`);
   }
 
   createEmployee(employee: Employee): Observable<Object>{

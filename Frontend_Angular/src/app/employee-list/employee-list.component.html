@@ -2,21 +2,46 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th> First Name </th>
-            <th> Last Name </th>
-            <th> Email Id </th>
+            <th (click)="sortBy('firstName')" class="sortable">
+                First Name
+                @if (sortColumn === 'firstName') {
+                {{ sortDirection === 'ASC' ? '▲' : '▼' }}
+                } @else {
+                <span class="hover-arrow">⇅</span>
+                }
+            </th>
+
+            <th (click)="sortBy('lastName')" class="sortable">
+                Last Name
+                @if (sortColumn === 'lastName') {
+                {{ sortDirection === 'ASC' ? '▲' : '▼' }}
+                } @else {
+                <span class="hover-arrow">⇅</span>
+                }
+            </th>
+
+            <th (click)="sortBy('emailId')" class="sortable">
+                Email Id
+                @if (sortColumn === 'emailId') {
+                {{ sortDirection === 'ASC' ? '▲' : '▼' }}
+                } @else {
+                <span class="hover-arrow">⇅</span>
+                }
+            </th>
             <th> Actions </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of employees">
-             <td> {{ employee.firstName }} </td>
+        <tr *ngFor="let employee of employees">
+            <td> {{ employee.firstName }} </td>
             <td> {{ employee.lastName }} </td>
             <td> {{ employee.emailId }} </td>
             <td>
-                <button (click) = "updateEmployee(employee.id!)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteEmployee(employee.id!)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "employeeDetails(employee.id!)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+                <button (click)="updateEmployee(employee.id!)" class="btn btn-info"> Update</button>
+                <button (click)="deleteEmployee(employee.id!)" class="btn btn-danger" style="margin-left: 10px">
+                    Delete</button>
+                <button (click)="employeeDetails(employee.id!)" class="btn btn-info" style="margin-left: 10px">
+                    View</button>
             </td>
         </tr>
     </tbody>
