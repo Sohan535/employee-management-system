@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrl: './employee-list.component.css'
 })
 export class EmployeeListComponent implements OnInit{
+  sortColumn: string = '';
+  sortDirection: 'ASC' | 'DESC' = 'ASC';
 employees !: Employee[];
 
 constructor(private employeeService: EmployeeService, private router: Router) { }
@@ -19,10 +21,25 @@ ngOnInit(): void {
   this.getEmployees();
 }
 
+sortBy(column: string): void {
+  if (this.sortColumn === column) {
+    this.sortDirection = this.sortDirection === 'ASC' ? 'DESC' : 'ASC';
+  } else {
+    this.sortColumn = column;
+    this.sortDirection = 'ASC';
+  }
+
+  this.getEmployees(); // re-fetch with new sort
+}
+
 private getEmployees(){
-  this.employeeService.getEmployeesList().subscribe(data =>{
-    this.employees=data;
-  });
+  if (this.sortColumn) {
+    this.employeeService.getEmployeesList(this.sortColumn, this.sortDirection)
+      .subscribe(data => this.employees = data);
+  } else {
+    this.employeeService.getEmployeesList('firstName', 'ASC')
+      .subscribe(data => this.employees = data);
+  }
 }
 
 employeeDetails(id: number){
