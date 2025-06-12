@@ -46,3 +46,14 @@
         </tr>
     </tbody>
 </table>
+
+
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+
+  <span *ngFor="let i of [].constructor(totalPages); let idx = index">
+    <button (click)="goToPage(idx)" [disabled]="idx === currentPage">{{ idx + 1 }}</button>
+  </span>
+
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
+</div>

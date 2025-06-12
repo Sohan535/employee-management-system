@@ -3,8 +3,10 @@ package com.example.demo.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,7 +33,10 @@ public class EmployeeController {
 	private EmployeeRepository employeeRepository;
 	
 	@GetMapping("/employees")
-	public List<Employee> getAllEmployees(@RequestParam(required = false) String sortBy, @RequestParam(required = false) String direction){
+	public Page<Employee> getAllEmployees(@RequestParam(required = false) String sortBy,
+			@RequestParam(required = false) String direction,
+			@RequestParam(defaultValue="0") int page,
+			@RequestParam(defaultValue="5") int size){
 		Sort sort;
 		
 		if (sortBy != null && !sortBy.isBlank() && direction != null) {
@@ -39,7 +44,9 @@ public class EmployeeController {
 	    } else {
 	        sort = Sort.by(Sort.Direction.ASC, "firstName"); // default sort
 	    }
-		return employeeRepository.findAll(sort);
+		
+		Pageable pageable= PageRequest.of(page, size, sort);
+		return employeeRepository.findAll(pageable);
 	}
 	
 	@PostMapping("/employees")

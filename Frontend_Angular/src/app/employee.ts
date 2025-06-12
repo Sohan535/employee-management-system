@@ -4,3 +4,10 @@ export class Employee {
     lastName !: string;
     emailId !: string;
 }
+
+export interface PageResponse<T> {
+    content: T[];
+    totalElements: number;
+    totalPages: number;
+    number: number;
+}
