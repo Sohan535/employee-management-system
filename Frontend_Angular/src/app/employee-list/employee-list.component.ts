@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
   styleUrl: './employee-list.component.css'
 })
 export class EmployeeListComponent implements OnInit{
-  sortColumn: string = '';
-  sortDirection: 'ASC' | 'DESC' = 'ASC';
+sortColumn: string = 'firstName';
+sortDirection: string = 'ASC';
+currentPage: number = 0;
+totalPages: number = 0;
+pageSize: number = 5;
 employees !: Employee[];
 
 constructor(private employeeService: EmployeeService, private router: Router) { }
@@ -32,14 +35,17 @@ sortBy(column: string): void {
   this.getEmployees(); // re-fetch with new sort
 }
 
-private getEmployees(){
-  if (this.sortColumn) {
-    this.employeeService.getEmployeesList(this.sortColumn, this.sortDirection)
-      .subscribe(data => this.employees = data);
-  } else {
-    this.employeeService.getEmployeesList('firstName', 'ASC')
-      .subscribe(data => this.employees = data);
-  }
+private getEmployees(page: number = 0, size: number = 5) : void {
+  
+  const sortColumn = this.sortColumn || 'firstName';
+  const sortDirection = this.sortDirection || 'ASC';
+
+  this.employeeService.getEmployeesList(sortColumn, sortDirection, page, size)
+    .subscribe(response => {
+      this.employees = response.content;
+      this.totalPages = response.totalPages;
+      this.currentPage = response.number;
+    });
 }
 
 employeeDetails(id: number){
@@ -56,4 +62,23 @@ deleteEmployee(id: number){
     this.getEmployees();
   })
 }
+
+goToPage(page: number): void {
+  if(page>=0 && page < this.totalPages){
+    this.getEmployees(page, this.pageSize);
+  }
+}
+
+nextPage(): void{
+  if(this.currentPage < this.totalPages - 1) {
+    this.getEmployees(this.currentPage + 1, this.pageSize);
+  }
+}
+
+previousPage(): void {
+  if(this.currentPage > 0) {
+    this.getEmployees(this.currentPage - 1, this.pageSize);
+  }
+}
+
 }

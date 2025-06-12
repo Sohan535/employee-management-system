@@ -1,7 +1,7 @@
 import { Directive, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Employee } from './employee';
+import { Employee, PageResponse } from './employee';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,14 @@ export class EmployeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getEmployeesList(sortBy: string, direction: string): Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>(`${this.baseURL}?sortBy=${sortBy}&direction=${direction}`);
+  getEmployeesList(sortBy: string, direction: string, page: number, size: number): Observable<PageResponse<Employee>>{
+    let params= new HttpParams()
+      .set('sortBy', sortBy)
+      .set('direction', direction)
+      .set('page', page)
+      .set('size', size);
+
+    return this.httpClient.get<PageResponse<Employee>>(this.baseURL, { params });
   }
 
   createEmployee(employee: Employee): Observable<Object>{
