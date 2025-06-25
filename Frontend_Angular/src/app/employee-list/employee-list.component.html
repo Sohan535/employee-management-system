@@ -1,4 +1,5 @@
-<h4>Employee List</h4>
+<div style="height: 480px;">
+    <h4>Employee List</h4>
 <button (click)="downloadExcelFile()">Export to Excel</button>
 <table class="table table-striped">
     <thead>
@@ -58,3 +59,5 @@
 
   <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
 </div>
+</div>
+
