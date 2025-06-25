@@ -37,4 +37,10 @@ export class EmployeeService {
   deleteEmployee(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
+
+  downloadExcel(): Observable<Blob> {
+  return this.httpClient.get('http://localhost:8080/api/v1/export', {
+    responseType: 'blob'
+  });
+}
 }

@@ -81,4 +81,22 @@ previousPage(): void {
   }
 }
 
+downloadExcelFile() {
+    this.employeeService.downloadExcel().subscribe((response: Blob) => {
+      const blob = new Blob([response], {
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      });
+
+      const url = window.URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = 'employees.xlsx';
+      anchor.click();
+      window.URL.revokeObjectURL(url);
+    }, error => {
+      console.error('Error downloading file', error);
+    });
+  }
+
+
 }

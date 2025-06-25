@@ -1,13 +1,17 @@
 package com.example.demo.controller;
 
+import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.data.domain.Pageable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Employee;
 import com.example.demo.repository.EmployeeRepository;
+import com.example.demo.service.ExcelExportService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -31,6 +36,10 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@Autowired
+    private ExcelExportService excelExportService;
+	
 	
 	@GetMapping("/employees")
 	public Page<Employee> getAllEmployees(@RequestParam(required = false) String sortBy,
@@ -48,6 +57,21 @@ public class EmployeeController {
 		Pageable pageable= PageRequest.of(page, size, sort);
 		return employeeRepository.findAll(pageable);
 	}
+	
+	@GetMapping("/export")
+    public ResponseEntity<InputStreamResource> exportEmployeesToExcel() throws Exception {
+        List<Employee> employees = employeeRepository.findAll();; // fetch from DB
+
+        ByteArrayInputStream in = excelExportService.employeesToExcel(employees);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "attachment; filename=employees.xlsx");
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                .body(new InputStreamResource(in));
+    }
 	
 	@PostMapping("/employees")
 	public Employee createEmployee(@RequestBody Employee employee) {
