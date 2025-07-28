@@ -2,12 +2,17 @@
 
 <img width="589" height="197" alt="image" src="https://github.com/user-attachments/assets/8177b6e3-5585-4c4c-8f4e-3cdccb988a46" />
 
-## 🛠️ Tech Stack
-Frontend: Angular, HTML, CSS, TypeScript
-Backend: Java, Spring Boot
-Database: MySQL
-API Testing: Postman
-Hosting: Localhost (Development)
+### 🧰 Tech Stack
+
+**Frontend:** Angular, HTML, CSS, TypeScript  
+**Backend:** Java, Spring Boot  
+**Database:** MySQL *(or PostgreSQL – update accordingly)*  
+**API Testing:** Postman  
+**Containerization:** *(Optional – add Docker if used)*  
+**CI/CD:** *(Optional – GitHub Actions, Jenkins, etc. if used)*  
+**Hosting:** Localhost (Development)  
+**Web Server:** Angular Dev Server
+
 
 
 ## **APPLICATION HOME PAGE**
