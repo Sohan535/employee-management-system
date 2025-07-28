@@ -10,6 +10,14 @@
 **API Testing:** Postman  
 **Web Server:** Angular Dev Server
 
+# ✨ Features
+
+- Developed a full-stack web application to manage employee data with Create, Read, Update, and Delete (CRUD) functionality.  
+- Integrated **pagination** and **sorting** by first name, last name, and email for better data navigation.  
+- Implemented **Excel export** feature to download employee data in spreadsheet format.  
+- Built a **dark/light mode toggle** for improved user experience.  
+- Used **Angular** for the frontend, **Spring Boot** for REST APIs, and **MySQL** as the database.
+
 # 📷 Screenshots
 
 | Application Home Page | Light Mode |
@@ -24,13 +32,7 @@
 |--------------------|----------------------|
 | <img width="400" src="https://github.com/user-attachments/assets/c4a6d4d2-3c6d-477f-ae02-3593e6106ea5" /> | <img width="400" src="https://github.com/user-attachments/assets/5d01eab0-5452-4135-8716-9909c436d923" /> |
 
-# ✨ Features
 
-- Developed a full-stack web application to manage employee data with Create, Read, Update, and Delete (CRUD) functionality.  
-- Integrated **pagination** and **sorting** by first name, last name, and email for better data navigation.  
-- Implemented **Excel export** feature to download employee data in spreadsheet format.  
-- Built a **dark/light mode toggle** for improved user experience.  
-- Used **Angular** for the frontend, **Spring Boot** for REST APIs, and **MySQL** as the database.
 
 
 
