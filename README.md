@@ -6,11 +6,8 @@
 
 **Frontend:** Angular, HTML, CSS, TypeScript  
 **Backend:** Java, Spring Boot  
-**Database:** MySQL *(or PostgreSQL – update accordingly)*  
+**Database:** MySQL
 **API Testing:** Postman  
-**Containerization:** *(Optional – add Docker if used)*  
-**CI/CD:** *(Optional – GitHub Actions, Jenkins, etc. if used)*  
-**Hosting:** Localhost (Development)  
 **Web Server:** Angular Dev Server
 
 
