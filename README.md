@@ -10,32 +10,20 @@
 **API Testing:** Postman  
 **Web Server:** Angular Dev Server
 
-
 # 📷 Screenshots
 
-## Application Home Page
+| Application Home Page | Light Mode |
+|------------------------|------------|
+| <img width="400" src="https://github.com/user-attachments/assets/88719573-f461-42c9-a561-946558dbc781" /> | <img width="400" src="https://github.com/user-attachments/assets/88f9bdc8-aad6-4d03-8e14-451560eda884" /> |
 
-<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/88719573-f461-42c9-a561-946558dbc781" />
+| Data Exported in Excel | Add Employee Page |
+|------------------------|--------------------|
+| <img width="400" src="https://github.com/user-attachments/assets/db3335f1-fb9a-4040-84bc-bc95884a5703" /> | <img width="400" src="https://github.com/user-attachments/assets/e89a373b-6271-4f1f-8196-cf2ec23cd671" /> |
 
-## Light Mode
+| View Employee Page | Update Employee Page |
+|--------------------|----------------------|
+| <img width="400" src="https://github.com/user-attachments/assets/c4a6d4d2-3c6d-477f-ae02-3593e6106ea5" /> | <img width="400" src="https://github.com/user-attachments/assets/5d01eab0-5452-4135-8716-9909c436d923" /> |
 
-<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/88f9bdc8-aad6-4d03-8e14-451560eda884" />
-
-## Data Exported in Excel
-
-<img width="589" height="260" alt="image" src="https://github.com/user-attachments/assets/db3335f1-fb9a-4040-84bc-bc95884a5703" />
-
-## Add Employee Page
-
-<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/e89a373b-6271-4f1f-8196-cf2ec23cd671" />
-
-## View Employee Page
-
-<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/c4a6d4d2-3c6d-477f-ae02-3593e6106ea5" />
-
-## Update Employee Page
-
-<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/5d01eab0-5452-4135-8716-9909c436d923" />
 
 
 
