@@ -21,6 +21,10 @@
 
 <img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/88f9bdc8-aad6-4d03-8e14-451560eda884" />
 
+## Data Exported in Excel
+
+<img width="589" height="260" alt="image" src="https://github.com/user-attachments/assets/db3335f1-fb9a-4040-84bc-bc95884a5703" />
+
 ## Add Employee Page
 
 <img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/e89a373b-6271-4f1f-8196-cf2ec23cd671" />
