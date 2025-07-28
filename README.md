@@ -5,7 +5,7 @@
 🛠️ Tech Stack
 
 
-Application home page
+**APPLICATION HOME PAGE**
 
 <img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/88719573-f461-42c9-a561-946558dbc781" />
 
