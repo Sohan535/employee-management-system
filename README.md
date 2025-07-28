@@ -7,7 +7,6 @@
 **Frontend:** Angular, HTML, CSS, TypeScript  
 **Backend:** Java, Spring Boot  
 **Database:** MySQL
-
 **API Testing:** Postman  
 **Web Server:** Angular Dev Server
 
