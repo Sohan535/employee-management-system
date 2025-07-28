@@ -4,7 +4,7 @@ Full-Stack Application Architecture
 
 Application home page
 
-<img width="589" height="197" alt="image" src="https://github.com/user-attachments/assets/88719573-f461-42c9-a561-946558dbc781" />
+<img width="589" height="257" alt="image" src="https://github.com/user-attachments/assets/88719573-f461-42c9-a561-946558dbc781" />
 
 
 
